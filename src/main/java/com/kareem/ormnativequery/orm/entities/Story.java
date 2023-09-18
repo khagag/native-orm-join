@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 public class Story {
@@ -15,18 +16,18 @@ public class Story {
     @Column(nullable = false)
     private Long userId;
     private String name;
-    private String desc;
+    private String description;
 
     public Story(long id,long user_id,String name,String desc){
         this.Id = id;
         this.name = name;
-        this.desc = desc;
-        this.userId = userId;
+        this.description = desc;
+        this.userId = user_id;
     }
 
     public Story(long user_id,String name,String desc){
         this.name=name;
-        this.userId=userId;
-        this.desc=desc;
+        this.userId=user_id;
+        this.description=desc;
     }
 }
